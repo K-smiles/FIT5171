@@ -2,8 +2,6 @@ package fit5171.monash.edu;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -23,7 +21,6 @@ public class TicketSystemTest {
     /**
      * mock Person data needed in test
      */
-
     @Before
     public void setUpPersonData() {
         // mock Person1 data
@@ -55,26 +52,6 @@ public class TicketSystemTest {
         // mock Person1 data
         FlightCollection.flights = new ArrayList<>();
         FlightCollection.addFlights(flights);
-        System.out.println("saddddddd");
-        System.out.println(FlightCollection.flights);
-    }
-
-
-    @Test
-    public void testbuyTicketInTicket() throws Exception {
-
-        System.out.println(FlightCollection.flights);
-        Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
-        ArrayList<Ticket> tickets = new ArrayList<>();
-        tickets.add(ticket);
-        TicketCollection.tickets = new ArrayList<>();
-        TicketCollection.addTickets(tickets);
-        buyTicket.buyTicket(1);
-    }
-
-    @Test
-    public void testbuyTicketInTicketByMinor() throws Exception {
-        buyTicket.buyTicket(-1);
     }
 
     @Test
@@ -83,20 +60,18 @@ public class TicketSystemTest {
         buyTicket.showTicket();
     }
 
-    /**
-     * garbage clear
-     */
-    @AfterEach
-    void tearDown() {
-    }
     @Test
-    public void testbuyTicket() throws Exception {
-        buyTicket.buyTicket(1);
+    public void testbuyTicketOfTS2() throws Exception {
+        buyTicket.buyTicket(3);
     }
 
     @Test
-    public void testAg() throws Exception {
-        TicketSystem.BuyTicket buyTicket = new TicketSystem.BuyTicket<>();
+    public void testbuyTicketOfTS3() throws Exception {
+        Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
+        ArrayList<Ticket> tickets = new ArrayList<>();
+        tickets.add(ticket);
+        TicketCollection.tickets = new ArrayList<>();
+        TicketCollection.addTickets(tickets);
         buyTicket.buyTicket(1);
     }
 }

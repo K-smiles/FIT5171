@@ -3,14 +3,16 @@ package fit5171.monash.edu;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class TicketSystemTest {
     TicketSystem ticketSystem = new TicketSystem();
-    TicketSystem.BuyTicket<Ticket> buyTicket = new TicketSystem.BuyTicket<>();
+    TicketSystem.BuyTicket<Ticket> buyTicket = new TicketSystem.BuyTicket<Ticket>();
 
     Passenger passenger1;
     Passenger passenger2;
@@ -26,6 +28,12 @@ public class TicketSystemTest {
 
     @Before
     public void setUpPersonData() {
+
+        Airplane testAirplane = new Airplane(1,"boeing747",30,200,10);
+        String str="2024-03-19 15:00:00";
+        String str2="2024-03-19 17:00:00";
+        Timestamp timestamp = Timestamp.valueOf(str);
+        Timestamp timestamp2 = Timestamp.valueOf(str2);
         // mock Person1 data
         passenger1 = new Passenger();
         passenger1.setAge(20);
@@ -74,7 +82,7 @@ public class TicketSystemTest {
 
     @Test
     public void testbuyTicketInTicketByMinor() throws Exception {
-        buyTicket.buyTicket(-1);
+        buyTicket.buyTicket(3);
     }
 
     @Test
@@ -96,7 +104,15 @@ public class TicketSystemTest {
 
     @Test
     public void testAg() throws Exception {
-        TicketSystem.BuyTicket buyTicket = new TicketSystem.BuyTicket<>();
+        TicketSystem.BuyTicket<Object> buyTicket = new TicketSystem.BuyTicket<>();
         buyTicket.buyTicket(1);
     }
+
+    @Test
+    public void chooseTicketTest() throws Exception{
+        ticketSystem.chooseTicket("Sydney", "Beijing");
+
+    }
+
+
 }

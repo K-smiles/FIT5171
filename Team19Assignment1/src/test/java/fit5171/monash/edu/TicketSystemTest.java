@@ -2,13 +2,20 @@ package fit5171.monash.edu;
 
 import org.junit.Before;
 import org.junit.Test;
+<<<<<<< HEAD
+import org.junit.jupiter.api.AfterEach;
+=======
+>>>>>>> d274d7be01729562a589284c125c0ed1a83ab2b5
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class TicketSystemTest {
     TicketSystem ticketSystem = new TicketSystem();
-    TicketSystem.BuyTicket<Ticket> buyTicket = new TicketSystem.BuyTicket<>();
+    TicketSystem.BuyTicket<Ticket> buyTicket = new TicketSystem.BuyTicket<Ticket>();
 
     Passenger passenger1;
     Passenger passenger2;
@@ -23,6 +30,12 @@ public class TicketSystemTest {
      */
     @Before
     public void setUpPersonData() {
+
+        Airplane testAirplane = new Airplane(1,"boeing747",30,200,10);
+        String str="2024-03-19 15:00:00";
+        String str2="2024-03-19 17:00:00";
+        Timestamp timestamp = Timestamp.valueOf(str);
+        Timestamp timestamp2 = Timestamp.valueOf(str2);
         // mock Person1 data
         passenger1 = new Passenger();
         passenger1.setAge(20);
@@ -52,6 +65,29 @@ public class TicketSystemTest {
         // mock Person1 data
         FlightCollection.flights = new ArrayList<>();
         FlightCollection.addFlights(flights);
+<<<<<<< HEAD
+        System.out.println("saddddddd");
+        System.out.println(FlightCollection.flights);
+    }
+
+
+    @Test
+    public void testbuyTicketInTicket() throws Exception {
+
+        System.out.println(FlightCollection.flights);
+        Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
+        ArrayList<Ticket> tickets = new ArrayList<>();
+        tickets.add(ticket);
+        TicketCollection.tickets = new ArrayList<>();
+        TicketCollection.addTickets(tickets);
+        buyTicket.buyTicket(1);
+    }
+
+    @Test
+    public void testbuyTicketInTicketByMinor() throws Exception {
+        buyTicket.buyTicket(3);
+=======
+>>>>>>> d274d7be01729562a589284c125c0ed1a83ab2b5
     }
 
     @Test
@@ -66,12 +102,25 @@ public class TicketSystemTest {
     }
 
     @Test
+<<<<<<< HEAD
+    public void testAg() throws Exception {
+        TicketSystem.BuyTicket<Object> buyTicket = new TicketSystem.BuyTicket<>();
+=======
     public void testbuyTicketOfTS3() throws Exception {
         Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
         ArrayList<Ticket> tickets = new ArrayList<>();
         tickets.add(ticket);
         TicketCollection.tickets = new ArrayList<>();
         TicketCollection.addTickets(tickets);
+>>>>>>> d274d7be01729562a589284c125c0ed1a83ab2b5
         buyTicket.buyTicket(1);
     }
+
+    @Test
+    public void chooseTicketTest() throws Exception{
+        ticketSystem.chooseTicket("Sydney", "Beijing");
+
+    }
+
+
 }

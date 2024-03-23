@@ -3,9 +3,6 @@ package fit5171.monash.edu;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
-/**
- * 航线，出发地，目的地，公司，时间，飞机
- */
 public class Flight {
     private int flightID;
     private String departTo;

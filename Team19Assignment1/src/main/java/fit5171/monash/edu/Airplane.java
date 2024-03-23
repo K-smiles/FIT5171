@@ -1,8 +1,5 @@
 package fit5171.monash.edu;
 
-/**
- * 航线，飞机
- */
 public class Airplane
 {
     private int airplaneID;

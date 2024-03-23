@@ -23,7 +23,6 @@ public class TicketSystemTest {
      */
     @Before
     public void setUpPersonData() {
-
         Airplane testAirplane = new Airplane(1,"boeing747",30,200,10);
         String str="2024-03-19 15:00:00";
         String str2="2024-03-19 17:00:00";
@@ -58,47 +57,33 @@ public class TicketSystemTest {
         // mock Person1 data
         FlightCollection.flights = new ArrayList<>();
         FlightCollection.addFlights(flights);
-        System.out.println("saddddddd");
-        System.out.println(FlightCollection.flights);
     }
 
-
+    /**
+     * test if showticket method on the condition of no data
+     */
     @Test
-    public void testbuyTicketInTicket() throws Exception {
-
-        System.out.println(FlightCollection.flights);
-        Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
-        ArrayList<Ticket> tickets = new ArrayList<>();
-        tickets.add(ticket);
-        TicketCollection.tickets = new ArrayList<>();
-        TicketCollection.addTickets(tickets);
-        buyTicket.buyTicket(1);
-    }
-
-    @Test
-    public void testbuyTicketInTicketByMinor() throws Exception {
-        buyTicket.buyTicket(3);
-    }
-
-    @Test
-    public void checkshowTicket()
+    public void checkshowTicketOfTS1()
     {
         buyTicket.showTicket();
     }
 
+    /**
+     * test if the buyTicket work
+     * @throws Exception
+     */
     @Test
     public void testbuyTicketOfTS2() throws Exception {
-        //buyTicket.buyTicket(3);
+        buyTicket.buyTicket(3);
     }
 
-    @Test
-
-    public void testAg() throws Exception {
-        TicketSystem.BuyTicket<Object> buyTicket = new TicketSystem.BuyTicket<>();
-    }
-
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testbuyTicketOfTS3() throws Exception {
+        //mock the data of ticket
         Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
         ArrayList<Ticket> tickets = new ArrayList<>();
         tickets.add(ticket);
@@ -106,8 +91,13 @@ public class TicketSystemTest {
         TicketCollection.addTickets(tickets);
         buyTicket.buyTicket(1);
     }
+
+    /**
+     *  Test chooseTicket method if it can work as expectation
+     * @throws Exception
+     */
     @Test
-    public void chooseTicketTest() throws Exception{
+    public void chooseTicketTestOfTS7() throws Exception{
         ticketSystem.chooseTicket("Sydney", "Beijing");
 
     }

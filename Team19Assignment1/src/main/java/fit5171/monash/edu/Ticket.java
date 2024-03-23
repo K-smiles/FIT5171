@@ -1,8 +1,6 @@
 package fit5171.monash.edu;
 
-/**
- * 票本身
- */
+
 public class Ticket
 {
     private int ticket_id;

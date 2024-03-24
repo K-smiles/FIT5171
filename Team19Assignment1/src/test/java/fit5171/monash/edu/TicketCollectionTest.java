@@ -85,7 +85,8 @@ class TicketCollectionTest {
         assertNotNull(result);
     }
 
-    /* TC3 Test the get all tickets method can run without crashing. Returns void */
+    /* TC3 Test the get all tickets method can run without crashing.
+    No code lines written. Returns void. */
     @Test
     void getAllTickets() {
         testCollect.addTickets(collectionTickets);

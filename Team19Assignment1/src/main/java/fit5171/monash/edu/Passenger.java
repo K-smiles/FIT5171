@@ -1,8 +1,6 @@
 package fit5171.monash.edu;
 
-/**
- * 乘客，邮件，电话号码，护照
- */
+
 public class Passenger extends Person
 {
     private String email;

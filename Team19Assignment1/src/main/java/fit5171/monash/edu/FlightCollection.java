@@ -3,9 +3,6 @@ package fit5171.monash.edu;
 import java.util.ArrayList;
 import java.util.Optional;
 
-/**
- * 航线集合
- */
 public class FlightCollection {
 	
 	public static ArrayList<Flight> flights;

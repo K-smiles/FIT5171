@@ -1,8 +1,6 @@
 package fit5171.monash.edu;
 
-/**
- * client本身，名字，年龄
- */
+
 public abstract class Person //abstract class Person
 {
     private String firstName;

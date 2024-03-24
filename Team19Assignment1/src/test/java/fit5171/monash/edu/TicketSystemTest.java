@@ -2,11 +2,7 @@ package fit5171.monash.edu;
 
 import org.junit.Before;
 import org.junit.Test;
-<<<<<<< HEAD
 import org.junit.jupiter.api.AfterEach;
-=======
->>>>>>> d274d7be01729562a589284c125c0ed1a83ab2b5
-
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -65,7 +61,6 @@ public class TicketSystemTest {
         // mock Person1 data
         FlightCollection.flights = new ArrayList<>();
         FlightCollection.addFlights(flights);
-<<<<<<< HEAD
         System.out.println("saddddddd");
         System.out.println(FlightCollection.flights);
     }
@@ -86,8 +81,7 @@ public class TicketSystemTest {
     @Test
     public void testbuyTicketInTicketByMinor() throws Exception {
         buyTicket.buyTicket(3);
-=======
->>>>>>> d274d7be01729562a589284c125c0ed1a83ab2b5
+
     }
 
     @Test
@@ -102,17 +96,16 @@ public class TicketSystemTest {
     }
 
     @Test
-<<<<<<< HEAD
+
     public void testAg() throws Exception {
         TicketSystem.BuyTicket<Object> buyTicket = new TicketSystem.BuyTicket<>();
-=======
+    }
     public void testbuyTicketOfTS3() throws Exception {
         Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
         ArrayList<Ticket> tickets = new ArrayList<>();
         tickets.add(ticket);
         TicketCollection.tickets = new ArrayList<>();
         TicketCollection.addTickets(tickets);
->>>>>>> d274d7be01729562a589284c125c0ed1a83ab2b5
         buyTicket.buyTicket(1);
     }
 

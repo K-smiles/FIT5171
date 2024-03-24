@@ -25,14 +25,16 @@ public class FlightCollection {
     
     public static Flight getFlightInfo(String city) {
     	//SELECT a flight where depart_to = city
-		Optional<Flight> result  = flights.stream().findAny();
-		Flight flight =result.filter(fight -> fight.getDepartTo().equals(city)).get();
-		return flight;
+		/*Optional<Flight> result  = flights.stream().findAny();
+		Flight flight =result.filter(fight -> flight.getDepartTo().equals(city)).get();
+		return flight;*/
+		return null;
     }
     public static Flight getFlightInfo(int flight_id) {
     	//SELECT a flight with a particular flight id
-		Optional<Flight> result  = flights.stream().findAny();
-		Flight flight =result.filter(fight -> fight.getFlightID()== (flight_id)).get();
-		return flight;
+		/*Optional<Flight> result  = flights.stream().findAny();
+		Flight flight =result.filter(fight -> flight.getFlightID()== (flight_id)).get();
+		return flight;*/
+		return null;
     }
 }

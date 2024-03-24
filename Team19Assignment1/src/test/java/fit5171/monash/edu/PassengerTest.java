@@ -11,18 +11,6 @@ public class PassengerTest {
                                           40,"male","bsmith@gmail.com","0123456789",
                                           "australia","1234",5678);
     //Initialise sample test data for Passneger
-    @Before
-    public void setUpPassengerBegin() {
-        // mock Person1 data
-        testPassenger = new Passenger();
-        testPassenger.setAge(40);
-        testPassenger.setFirstName("bill");
-        testPassenger.setSecondName("smith");
-        testPassenger.setEmail("bsmith@gmail.com");
-        testPassenger.setPassport("EJ892003");
-        testPassenger.setCardNumber("1234");
-        testPassenger.setPhoneNumber("0123456789");
-    }
 
     @BeforeEach
     void setUp() {
@@ -70,12 +58,13 @@ public class PassengerTest {
 
     /* 5 Test display method */
     @Test
-    public void AtestToString() {
+    public void testToString() {
         String result = testPassenger.toString();
-        assertEquals(("\"Passenger{\" + \" Fullname= \"+ bill+\" \"+smith+\n" +
-                "  \" ,email='\" + bsmith@gmail.com + '\\'' +\n" +
-                "  \", phoneNumber='\" + 0123456789 + '\\'' +\n" +
-                "  \", passport='\" + EJ892003 +\n" +
-                "     '}'"),result);
+        String expected = "Passenger{" + " Fullname= " + "bill" + " " + "smith"+
+                " ,email='" + "bsmith@gmail.com" + '\'' +
+                ", phoneNumber='" + "0123456789" + '\'' +
+                ", passport='" + "EJ892003" +
+                '}';
+        assertEquals(expected,result);
     }
 }

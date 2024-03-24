@@ -2,11 +2,6 @@ package fit5171.monash.edu;
 
 import org.junit.Before;
 import org.junit.Test;
-<<<<<<< HEAD
-import org.junit.jupiter.api.AfterEach;
-=======
-
->>>>>>> 2166f3706d57d021c4000dee5636aa80cc8aad57
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -61,18 +56,12 @@ public class TicketSystemTest {
         // mock Person1 data
         FlightCollection.flights = new ArrayList<>();
         FlightCollection.addFlights(flights);
-<<<<<<< HEAD
-        System.out.println("saddddddd");
-        System.out.println(FlightCollection.flights);
-=======
->>>>>>> 2166f3706d57d021c4000dee5636aa80cc8aad57
     }
 
     /**
      * test if showticket method on the condition of no data
      */
     @Test
-<<<<<<< HEAD
     public void testbuyTicketInTicket() throws Exception {
 
         System.out.println(FlightCollection.flights);
@@ -91,10 +80,8 @@ public class TicketSystemTest {
     }
 
     @Test
-    public void checkshowTicket()
-=======
+
     public void checkshowTicketOfTS1()
->>>>>>> 2166f3706d57d021c4000dee5636aa80cc8aad57
     {
         buyTicket.showTicket();
     }
@@ -113,13 +100,10 @@ public class TicketSystemTest {
      * @throws Exception
      */
     @Test
-<<<<<<< HEAD
 
     public void testAg() throws Exception {
         TicketSystem.BuyTicket<Object> buyTicket = new TicketSystem.BuyTicket<>();
     }
-=======
->>>>>>> 2166f3706d57d021c4000dee5636aa80cc8aad57
     public void testbuyTicketOfTS3() throws Exception {
         //mock the data of ticket
         Ticket ticket = new Ticket(1,200,FlightCollection.flights.get(0),true,null);
